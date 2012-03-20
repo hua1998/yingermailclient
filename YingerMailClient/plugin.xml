@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin
+   id="yingermailclient"
+   name="YingerMailClient"
+   version="1.0.0"
+   provider-name="yinger"
+   class="yingermailclient.Activator">
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="yingermailclient.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="yingermailclient.Perspective"
+            icon="icons/icos/Web.ico"
+            id="yingermailclient.perspective"
+            name="Mail Perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="yingermailclient.application"
+            name="YinerMailClient-Yinger邮件客户端">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="yingermailclient.view.NavigatorView"
+            icon="icons/icos/Home.ico"
+            id="yingermailclient.navigatorview"
+            name="NavigatorView"
+            restorable="true">
+      </view>
+      <view
+            class="yingermailclient.view.MailView"
+            icon="icons/icos/Mail.ico"
+            id="yingermailclient.mailView"
+            name="Mail View"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="yingermailclient.editor.MailListEditor"
+            default="false"
+            icon="icons/icos/Stats.ico"
+            id="yingermailclient.maillisteditor"
+            name="MailListEditor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="yingermailclient.actionset"
+            label="MailActionSet"
+            visible="true">
+         <action
+               class="yingermailclient.action.AddAccountAction"
+               icon="icons/icos/User.ico"
+               id="yingermailclient.addAccountAction"
+               label="Add Account"
+               style="push"
+               toolbarPath="account"
+               tooltip="Add Account">
+         </action>
+         <action
+               class="yingermailclient.action.WriteAction"
+               icon="icons/icos/Documents.ico"
+               id="yingermailclient.writeMailAction"
+               label="Write"
+               toolbarPath="mail"
+               tooltip="Write Mail">
+         </action>
+         <action
+               class="yingermailclient.action.RecieveAction"
+               icon="icons/icos/Download.ico"
+               id="yingermailclient.receiveMailAction"
+               label="Receive"
+               pulldown="true"
+               style="pulldown"
+               toolbarPath="mail"
+               tooltip="Receive Mail">
+         </action>
+         <action
+               class="yingermailclient.action.DeleteAllMailAction"
+               icon="icons/icos/Stop.ico"
+               id="yingermailclient.deleteAllMailAction"
+               label="Delete All Mail"
+               style="push"
+               toolbarPath="mail">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <viewerContribution
+            id="yingermailclient.navigatorViewContribution"
+            targetID="yingermailclient.navigatorview">
+         <menu
+               id="yingermailclient.navigatorViewPopMenu"
+               label="Popmenu">
+         </menu>
+         <action
+               class="yingermailclient.action.DeleteAccountAction"
+               icon="icons/mail/delete_user.ico"
+               id="yingermailclient.deleteAccountAction"
+               label="Delete Account"
+               menubarPath="yingermailclient.navigatorViewPopMenu/additions"
+               tooltip="Delete Account">
+         </action>
+      </viewerContribution>
+   </extension>
+
+</plugin>

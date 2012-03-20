@@ -1,0 +1,14 @@
+<yingermailclient.model.Mail>
+  <xmlName>f731926f-00e1-4aa0-8a52-56dc2eed226b.xml</xmlName>
+  <sender>yingermailclient@163.com</sender>
+  <receivers>
+    <string>yingermailclient@126.com</string>
+  </receivers>
+  <subject>fasdfsd</subject>
+  <receiveDate>2012-03-20 12:48:14.324 CST</receiveDate>
+  <hasRead>true</hasRead>
+  <content>gsdgdsfg</content>
+  <ccs/>
+  <folder>Sentbox</folder>
+  <isDeleted>false</isDeleted>
+</yingermailclient.model.Mail>
